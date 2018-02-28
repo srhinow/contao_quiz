@@ -472,7 +472,7 @@ class ModuleQuiz extends \Module
 					$tmpAnswerCode .= '<div class="resultcomment incorrect">' . $GLOBALS['TL_LANG']['MSC']['incorrect_answer'] . '</div>';
 					
 					// Create linklist with answer pages and categories with wrong answers
-					$tmpLinklist[] = $objTemp->answerlink;
+					if(!empty($objTemp->answerlink)) $tmpLinklist[] = $objTemp->answerlink;
 					$tmpErrorCat[] = $objQuiz->getRelated('pid')->title;
 				}
 				else
